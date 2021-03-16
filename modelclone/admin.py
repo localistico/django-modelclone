@@ -5,7 +5,11 @@ try:
 except ImportError:
     # django < 1.7
     from django.contrib.admin.util import unquote
-from django.conf.urls import url
+try:
+    from django.urls import re_path as url
+except ImportError:
+    # django < 2.0
+    from django.conf.urls import url
 from django.utils.encoding import force_text
 from django.utils.translation import ugettext as _
 from django.utils.translation import ugettext_lazy as lazy
