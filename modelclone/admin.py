@@ -12,14 +12,15 @@ except ImportError:
     from django.conf.urls import url
 from django.utils.encoding import force_text
 from django.utils.translation import ugettext as _
-from django.utils.translation import ugettext_lazy as lazy
 from django.utils.html import escape
 from django.forms.models import model_to_dict
 from django.forms.formsets import all_valid
 if VERSION[0] < 2:
     from django.core.urlresolvers import reverse
+    from django.utils.translation import ugettext_lazy as lazy
 else:
     from django.urls import reverse
+    from django.utils.translation import gettext_lazy as lazy
 from django.core.exceptions import PermissionDenied
 from django.http import Http404
 from django.db.models.fields.files import FieldFile, FileField
