@@ -213,10 +213,12 @@ class ClonableModelAdmin(ModelAdmin):
         }
         context.update(extra_context or {})
 
-        return self.render_change_form(request,
+        return self.render_change_form(
+            request,
             context,
             form_url=form_url,
-            change=False
+            change=False,
+            add=True,
         )
 
     def tweak_cloned_fields(self, fields):
