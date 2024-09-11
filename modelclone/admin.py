@@ -6,7 +6,7 @@ except ImportError:
     # django < 1.7
     from django.contrib.admin.util import unquote
 try:
-    from django.urls import re_path as url
+    from django.urls import re_path
 except ImportError:
     # django < 2.0
     from django.urls import re_path
